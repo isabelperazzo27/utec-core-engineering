@@ -3,10 +3,9 @@
 
 
 def uppercase(n_str):
-    """Imprime una cadena en mayúsculas utilizando lógica ASCII."""
-    for c in n_str:
-        if ord('a') <= ord(c) <= ord('z'):
-            print(chr(ord(c) - 32), end="")
-        else:
-            print(c, end="")
-    print()
+    """Imprime una cadena en mayúsculas utilizando lógica ASCII y .format()."""
+    result = "".join(
+        chr(ord(c) - 32) if ord('a') <= ord(c) <= ord('z') else c
+        for c in n_str
+    )
+    print("{}".format(result))
