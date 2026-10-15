@@ -2,12 +2,11 @@
 """Módulo que contiene la función uppercase para convertir cadenas a mayúsculas."""
 
 
-def uppercase(s):
+def uppercase(n_str):
     """Imprime una cadena en mayúsculas utilizando lógica ASCII."""
-    result = ""
-    for c in s:
+    for c in n_str:
         if ord('a') <= ord(c) <= ord('z'):
-            result += chr(ord(c) - 32)
+            print(chr(ord(c) - 32), end="")
         else:
-            result += c
-    print(result)
+            print(c, end="")
+    print()
