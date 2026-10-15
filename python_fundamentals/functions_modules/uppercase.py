@@ -6,9 +6,7 @@ def uppercase(s):
     """Imprime una cadena en mayúsculas utilizando lógica ASCII."""
     result = ""
     for c in s:
-        # Si el carácter es una letra minúscula (entre 'a' y 'z')
         if ord('a') <= ord(c) <= ord('z'):
-            # Restamos 32 para convertirlo a mayúscula en ASCII
             result += chr(ord(c) - 32)
         else:
             result += c
