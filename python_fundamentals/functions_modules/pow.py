@@ -4,14 +4,15 @@
 
 def pow(a, b):
     """Calcula a elevado a la potencia b usando un bucle."""
+    if b == 0:
+        return 1
+    
     result = 1
-    if b < 0:
-        base = 1 / a
-        exponent = -b
-    else:
-        base = a
-        exponent = b
-
+    exponent = abs(b)
+    
     for _ in range(exponent):
-        result *= base
+        result *= a
+        
+    if b < 0:
+        return 1 / result
     return result
