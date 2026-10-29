@@ -3,10 +3,13 @@
 
 
 class Square:
-    """Representa un cuadrado con validación de tamaño y capacidad de impresión."""
+    """Representa un cuadrado con tamaño y
+
+    capacidad de impresión.
+    """
 
     def __init__(self, size=0):
-        """Inicializa un nuevo cuadrado con un tamaño opcional.
+        """Inicializa un nuevo cuadrado con tamaño opcional.
 
         Args:
             size (int): El tamaño del cuadrado (por defecto 0).
@@ -48,7 +51,7 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Imprime en la salida estándar el cuadrado usando el carácter '#'."""
+        """Imprime en la salida estándar el cuadrado con '#'."""
         if self.__size == 0:
             print()
             return
