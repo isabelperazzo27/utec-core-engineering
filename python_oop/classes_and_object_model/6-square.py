@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Definición de la clase Square con tamaño, posición e impresión."""
+"""Definición de clase Square con tamaño, posición e impresión."""
 
 
 class Square:
-    """Representa un cuadrado con tamaño, posición y representación en cadena."""
+    """Representa un cuadrado con tamaño, posición y
+
+    representación en cadena.
+    """
 
     def __init__(self, size=0, position=(0, 0)):
-        """Inicializa un nuevo cuadrado con tamaño y posición opcionales.
+        """Inicializa un nuevo cuadrado con tamaño
 
-        Args:
-            size (int): El tamaño del cuadrado (por defecto 0).
-            position (tuple): La posición de desplazamiento (por defecto (0, 0)).
+        y posición opcionales.
         """
         self.size = size
         self.position = position
@@ -43,7 +44,9 @@ class Square:
             or not all(isinstance(num, int) for num in value)
             or not all(num >= 0 for num in value)
         ):
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(
+                "position must be a tuple of 2 positive integers"
+            )
         self.__position = value
 
     def area(self):
@@ -55,11 +58,8 @@ class Square:
         if self.__size == 0:
             print()
             return
-        
-        # Manejo de la posición vertical (saltos de línea)
         if self.__position[1] > 0:
             print("\n" * (self.__position[1] - 1))
-
         for _ in range(self.__size):
             spaces = " " * self.__position[0]
             hashes = "#" * self.__size
@@ -69,14 +69,11 @@ class Square:
         """Define la representación en cadena del objeto Square."""
         if self.__size == 0:
             return ""
-        
         lines = []
         if self.__position[1] > 0:
             lines.append("\n" * self.__position[1])
-            
         for _ in range(self.__size):
             spaces = " " * self.__position[0]
             hashes = "#" * self.__size
             lines.append("{}{}".format(spaces, hashes))
-            
         return "\n".join(lines)
